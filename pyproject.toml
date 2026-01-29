@@ -1,0 +1,17 @@
+[project]
+name = "energy-efficiency-resource-search"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "chromadb>=1.4.1",
+    "groq>=1.0.0",
+    "jupyter>=1.1.1",
+    "lab>=8.8",
+    "nltk>=3.9.2",
+    "pymupdf>=1.26.7",
+    "sentence-transformers>=5.2.0",
+    "streamlit>=1.53.1",
+    "tiktoken>=0.12.0",
+]
