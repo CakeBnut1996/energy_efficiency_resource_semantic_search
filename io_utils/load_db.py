@@ -6,9 +6,8 @@ def get_or_create_collection(db_path: str, collection_name: str):
     Connects to ChromaDB and gets OR creates the collection.
     Used for Ingestion.
     """
-    full_path = os.path.abspath(db_path)
     print(f"🔌 Connecting to DB (Ingest Mode): {collection_name} at {db_path}")
-    client = chromadb.PersistentClient(path=full_path)
+    client = chromadb.PersistentClient(path=db_path)
     return client.get_or_create_collection(collection_name)
 
 def get_db_collection(db_path: str, collection_name: str):
@@ -16,9 +15,8 @@ def get_db_collection(db_path: str, collection_name: str):
     Connects to an EXISTING collection.
     Used for Retrieval.
     """
-    full_path = os.path.abspath(db_path)
     print(f"🔌 Connecting to DB (Read Mode): {collection_name} at {db_path}")
-    client = chromadb.PersistentClient(path=full_path)
+    client = chromadb.PersistentClient(path=db_path)
     try:
         return client.get_collection(collection_name)
     except ValueError:
